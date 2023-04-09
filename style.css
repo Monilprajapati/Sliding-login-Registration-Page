@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+* {
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+.login-page {
+  min-height: 100vh;
+  background-color: #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #469ad9;
+  background-image: linear-gradient(43deg, #469ad9 0%, #C850C0 46%, #7076ff 100%);
+  ;
+}
+.login-page .box {
+  background-image: url("img/3425225.jpg");
+  background-size: cover;
+  background-position: -40px;
+  background-repeat: repeat-x;
+  flex: 0 0 700px;
+  max-width: 700px;
+  min-height: 480px;
+  box-shadow: 0 0 20px #dddddd;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+}
+.login-page .box.slide-active {
+  background-position: 0px;
+}
+
+.login-page .box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(141, 134, 134, 0.354);
+}
+.login-page .box .left,
+.login-page .box .right {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding:40px 0; */
+}
+
+.login-page .box .left h3,
+.login-page .box .right h3 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 15px;
+}
+
+.login-page .box .left .register-btn,
+.login-page .box .right .login-btn {
+  background-color: transparent;
+  font-family: "Lato", sans-serif;
+  padding: 10px 35px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+}
+
+.login-page .box .left .register-btn:hover,
+.login-page .box .right .login-btn:hover {
+  outline: none;
+  color: purple;
+  background-color: white;
+  border: 1px solid white;
+}
+.login-page .box .left .register-btn:focus,
+.login-page .box .right .login-btn:focus {
+  outline: none;
+  border: 1px solid white;
+}
+.login-page .box .form {
+  position: absolute;
+  background-color: #ffffff;
+  height: 100%;
+  width: 50%;
+  right: 0;
+  top: 0;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+.login-page .box.slide-active .form {
+  right: 50%;
+}
+
+.login-page .box .form h3 {
+  font-size: 30px;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-page .box .form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-page .box .form .lost-password-form,
+.login-page .box .form .login-form,
+.login-page .box .form .register-form {
+  transition: all 0.5s ease-in-out;
+}
+
+.login-page .box .form .form-control {
+  width: 100%;
+  height: 45px;
+  font-size: 16px;
+  color: #000000;
+  border: none;
+  border-bottom: 1px solid #cccccc;
+  padding: 0;
+}
+
+input:hover::placeholder{
+  color: black;
+}
+
+input:focus::placeholder{
+  color:purple;
+}
+
+input{
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+
+}
+.login-page .box .form .form-control:focus {
+  outline: none;
+  border-bottom: 2px solid purple;
+}
+.login-page .box .form label {
+  font-size: 16px;
+  color: #555555;
+}
+.login-page .box .form .submit-btn {
+  width: 100%;
+  height: 40px;
+  background-color: purple;
+  border: none;
+  border-radius: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-page .box .form .submit-btn:hover {
+  outline: none;
+  background-color: white;
+  color: purple;
+  border: 1px solid purple;
+}
+.login-page .box .form .submit-btn:focus {
+  outline: none;
+}
+.login-page .box .form p {
+  margin-top: 20px;
+  text-align: center;
+}
+.login-page .box .form h5 {
+  font-size: 16px;
+  color: #555555;
+  margin: 0 0 30px;
+  font-weight: normal;
+}
+
+.login-page .box .form p a {
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  color: #3f51b5;
+}
+
+.login-page .box .form .form-hidden {
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/*responsive*/
+
+@media (max-width: 767px) {
+  .login-page .box {
+    padding: 10px;
+    max-width: 100%;
+    min-width: 500px;
+  }
+  .left, .right{
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 575px) {
+  .login-page .box .form {
+    width: 100%;
+    position: relative;
+    right: auto;
+    top: auto;
+    height: auto;
+  }
+  .login-page .box,
+  .login-page .box.slide-active {
+    background-position: center;
+  }
+  .login-page .box .left h3,
+  .login-page .box .right h3 {
+    font-size: 16px;
+  }
+  .login-page .box.slide-active .form {
+    right: auto;
+  }
+}
