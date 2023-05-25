@@ -1,12 +1,8 @@
-body {
-  margin: 0;
-  line-height: 1.5;
-}
-
 * {
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 
@@ -182,7 +178,7 @@ input{
   outline: none;
 }
 .login-page .box .form p {
-  margin-top: 20px;
+  margin-top: 35px;
   text-align: center;
 }
 .login-page .box .form h5 {
@@ -204,6 +200,25 @@ input{
   visibility: hidden;
   opacity: 0;
   overflow: hidden;
+}
+
+.rg-show{
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.rg-error{
+  color: red;
+}
+
+.rg-hide{
+  opacity: 0;
+  padding-top: 0px;
+  font-size: 0px;
 }
 
 /*responsive*/
