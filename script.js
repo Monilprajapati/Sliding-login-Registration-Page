@@ -19,14 +19,9 @@ let rg_fName = document.getElementById("rg_fName"),
   resetBtn = document.getElementById("resetBtn"),
   forgotEmail = document.getElementById("forgotEmail");
 
-let details = [
-  {
-    fname: "Monil",
-    lname: "Prajapati",
-    email: 123,
-    pw: 111,
-  },
-];
+let details = JSON.parse(localStorage.getItem("data")) || [];
+
+localStorage.setItem("data", JSON.stringify(details));
 
 const validateEmail = (email) => {
   const pattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
