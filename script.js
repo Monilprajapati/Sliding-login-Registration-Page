@@ -19,16 +19,9 @@ let rg_fName = document.getElementById("rg_fName"),
   resetBtn = document.getElementById("resetBtn"),
   forgotEmail = document.getElementById("forgotEmail");
 
-let details = JSON.parse(localStorage.getItem("data"));
+let details = JSON.parse(localStorage.getItem("data")) || [];
 
-details.push(
-  {
-    fname: "Monil",
-    lname: "Prajapati",
-    email: 123,
-    pw: 111,
-  },
-)
+localStorage.setItem("data", JSON.stringify(details));
 
 const validateEmail = (email) => {
   const pattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
@@ -36,6 +29,7 @@ const validateEmail = (email) => {
 };
 
 rgSubmit.onclick = () => {
+  details = JSON.parse(localStorage.getItem("data"));
   if (
     rg_fName.value === "" ||
     rg_lName.value === "" ||
